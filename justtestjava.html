@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo1">JavaScript can change HTML attributes.</p>
+
+<p id="demo">In this case JavaScript changes the src (source) attribute of an image.</p>
+<img id="myImage" src="bulboff.jpg" style="width:100px" height="150px">
+<script>
+
+blink();
+dblink();
+function blink()
+{
+document.getElementById('myImage').src='bulbon.jpg';
+setTimeout("dblink()",500);
+
+}
+function dblink()
+{
+document.getElementById('myImage').src='bulboff.jpg';
+setTimeout("blink()",500);
+}
+//implementing ajax in my code
+function loadMe(){
+var url = justtest.php;
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreaadystatechange = function()
+{
+if(xmlhttp.readyState = 4 && xmlhttp.status = 200)
+{
+document.getElementById("demonstration").innerHTML = xmlhttp.responseText;
+}
+};
+xmlhttp.open("GET",url,true);
+xmlhttp.send();
+}
+</script>
+</body>
+</html>
+<button onclick="document.getElementById('myImage').src='bulboff.jpg'">Turn off the light</button>
